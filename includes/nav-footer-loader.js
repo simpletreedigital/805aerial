@@ -1,14 +1,33 @@
 (function () {
+  function runScripts(container) {
+    var scripts = container.tagName === 'SCRIPT'
+      ? [container]
+      : Array.prototype.slice.call(container.querySelectorAll('script'));
+    scripts.forEach(function (oldScript) {
+      var newScript = document.createElement('script');
+      for (var i = 0; i < oldScript.attributes.length; i++) {
+        var attr = oldScript.attributes[i];
+        newScript.setAttribute(attr.name, attr.value);
+      }
+      newScript.text = oldScript.textContent;
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+  }
+
   function inject(html, position) {
     var wrapper = document.createElement('div');
     wrapper.innerHTML = html;
-    var node = wrapper.firstElementChild;
-    if (position === 'start') {
-      document.body.insertBefore(node, document.body.firstChild);
-    } else {
-      document.body.appendChild(node);
-    }
-    return node;
+    var nodes = Array.prototype.slice.call(wrapper.children);
+    var anchor = position === 'start' ? document.body.firstChild : null;
+    nodes.forEach(function (node) {
+      if (position === 'start') {
+        document.body.insertBefore(node, anchor);
+      } else {
+        document.body.appendChild(node);
+      }
+      runScripts(node);
+    });
+    return nodes[0];
   }
 
   function fetchInclude(path, cb) {
