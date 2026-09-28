@@ -1,1 +1,6 @@
-unsplash rate-limited during this build; retry credentials/unsplash_agency.json later if more county imagery is wanted.
+avila-beach-pier.jpg — Avila Beach pier California — photo by Kevin Dunlap — https://unsplash.com/photos/a-wooden-pier-with-a-street-light-on-top-of-it-hrSudjBQKeQ
+pismo-dunes.jpg — Pismo Beach dunes — photo by Bradley Lembach — https://unsplash.com/photos/a-person-walking-across-a-large-sandy-field-i-NRqXxjxzY
+bishop-peak.jpg — Bishop Peak San Luis Obispo — photo by Pacific Austin — https://unsplash.com/photos/silhouette-of-mountain-during-golden-hour-2ABF2wiZzm0
+atascadero-lake.jpg — Atascadero California — photo by Craig Melville — https://unsplash.com/photos/brown-rocky-mountain-beside-body-of-water-during-daytime-NDIegxhmeWw
+arroyo-grande-village.jpg — Arroyo Grande California village — photo by Ev — https://unsplash.com/photos/a-view-of-a-small-town-on-a-hill-yYvyBlHOBDM
+wine-country-aerial.jpg — vineyard aerial drone — photo by Dan Meyers — https://unsplash.com/photos/vineyard-rows-under-warm-low-sun-0AgtPoAARtE
