@@ -1,0 +1,84 @@
+from gen_pages import shell, write
+BASE = "https://805aerial.com"
+
+def article_schema(slug, title, desc, date):
+    return f"""<script type="application/ld+json">
+{{"@context":"https://schema.org","@type":"Article","headline":"{title}","description":"{desc}","datePublished":"{date}","dateModified":"{date}","author":{{"@type":"Organization","name":"805 Aerial"}},"publisher":{{"@type":"Organization","name":"805 Aerial"}}}}
+</script>
+<script type="application/ld+json">
+{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{{"@type":"ListItem","position":1,"name":"Home","item":"{BASE}/"}},
+{{"@type":"ListItem","position":2,"name":"Blog","item":"{BASE}/blog/"}},
+{{"@type":"ListItem","position":3,"name":"{title}","item":"{BASE}/blog/{slug}/"}}
+]}}
+</script>"""
+
+slug = "paso-robles-wineries-aerial-video-marketing"
+title = "How Paso Robles Wineries Use Aerial Video for Marketing"
+desc = "Why more Paso Robles wineries are investing in drone video, and what makes aerial footage effective for wine country marketing."
+date = "2026-09-27"
+
+body = f"""
+<section class="page-hero" style="background:#0b1220">
+  <div style="position:absolute;inset:0;z-index:0">
+    <img src="/images/portfolio/14-aerial-drone-photos-winery-paso.jpg" alt="" role="presentation" style="width:100%;height:100%;object-fit:cover;object-position:center">
+    <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(11,18,32,.93) 55%,rgba(11,18,32,.65) 100%)"></div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:2;max-width:800px">
+    <div class="breadcrumbs" style="color:#c7ccd6"><a href="/">Home</a> / <a href="/blog/">Blog</a> / Wineries &amp; Aerial Video</div>
+    <h1>{title}</h1>
+    <p class="lede">Why more wine country brands around Paso Robles are investing in drone footage, and what actually makes it work.</p>
+  </div>
+</section>
+
+<section class="block"><div class="wrap article-body">
+<p class="article-meta">Published September 2026 &middot; 805 Aerial &middot; 10 min read</p>
+
+<p>Paso Robles has more than 200 wineries spread across a wine region defined almost entirely by its terrain, rolling hills, distinct sub-AVAs, and vineyard rows that stretch across a landscape most visitors have never seen from above. That terrain is exactly why aerial video has become one of the most effective marketing tools available to wineries here, more effective, in many cases, than another round of tasting room interior photos.</p>
+
+<h2>What Makes Paso Robles Wine Country Visually Distinct</h2>
+<p>Unlike Napa or Sonoma, Paso Robles wine country is spread across a wider, hillier, more varied landscape, with distinct sub-appellations (the Adelaida District, Willow Creek, El Pomar, and others) that each have a somewhat different look based on elevation, soil, and vineyard layout. A ground-level photo of a tasting room patio doesn't communicate any of that. An aerial shot showing vineyard rows curving across a hillside, or a property's position relative to a specific sub-AVA, does.</p>
+
+<h2>How Wineries Actually Use Aerial Footage</h2>
+<ul>
+  <li><strong>Brand and website video.</strong> A short aerial-driven brand film is now a common homepage asset for wineries competing for attention among the dozens of tasting rooms in the region.</li>
+  <li><strong>Event and wedding venue marketing.</strong> Many Paso Robles wineries host weddings and private events as a meaningful revenue stream, and aerial footage of the venue setting is one of the strongest tools for booking those events, since couples are choosing a venue largely on visual impression.</li>
+  <li><strong>Harvest and seasonal content.</strong> Aerial footage captured during harvest, when vineyard color and activity peak, gives wineries seasonal marketing content that a static photo library can't replicate.</li>
+  <li><strong>Direct-to-consumer wine club marketing.</strong> Wineries selling through wine clubs and direct shipping increasingly use video, including aerial footage of the property, in email and social marketing aimed at members who may never visit in person.</li>
+</ul>
+
+<div class="scenario-box">
+<strong>Illustrative example:</strong> a mid-sized Paso Robles winery wanted a single video to anchor a wine club recruitment campaign. An aerial pass showing the full vineyard against the surrounding hills, combined with ground footage of the harvest and tasting room, gave the winery a piece of content that worked across its website, email campaign, and social ads, rather than needing three separate shoots for three separate channels.
+</div>
+
+<h2>What Makes Wine Country Aerial Footage Actually Work</h2>
+<p>Not every aerial shot of a vineyard is equally effective. A few things separate footage that actually helps a winery's marketing from footage that's just pretty:</p>
+<ul>
+  <li><strong>Timing matters more here than in most industries.</strong> Golden hour light across vineyard rows produces dramatically better footage than midday flat light, and harvest-season color adds a seasonal element that off-season footage can't match.</li>
+  <li><strong>Scale needs a reference point.</strong> A drone shot of vineyard rows with no reference to buildings, roads, or people can feel abstract. The strongest wine country aerial footage usually includes some grounding element, a barn, a tasting room, a road, that helps a viewer understand scale.</li>
+  <li><strong>It should connect to the ground experience.</strong> Aerial footage works best as part of a larger piece that also includes ground-level shots of the tasting room, staff, or product, not as a standalone abstract flyover.</li>
+</ul>
+
+<h2>Common Questions Wineries Ask Before Booking Aerial Video</h2>
+<div class="faq">
+<details><summary>Does filming require any special permission if it's on our own property?</summary><p>Generally, filming and drone flights over your own privately owned vineyard require standard FAA Part 107 compliance from the operator, but not a separate land-use permit, since it's private property with owner permission. See our full <a href="/blog/filming-drone-permits-san-luis-obispo-county/">guide to filming and drone permits in San Luis Obispo County</a> for more detail.</p></details>
+<details><summary>What time of year produces the best vineyard aerial footage?</summary><p>Harvest season, typically late summer into early fall in this region, produces the most visually distinct footage due to vineyard color, though footage can be captured effectively throughout the growing season depending on the goal.</p></details>
+<details><summary>Can aerial footage be combined with wedding or event venue marketing?</summary><p>Yes, many wineries use the same aerial footage across both wine marketing and event/wedding venue marketing, since the same visual asset supports both audiences.</p></details>
+<details><summary>How long does a typical winery aerial shoot take?</summary><p>Most winery shoots take half a day, combining aerial flights with ground footage, though this varies based on how much ground content is needed.</p></details>
+</div>
+
+<h2>Beyond Paso Robles</h2>
+<p>The same principles apply to agricultural and hospitality properties throughout San Luis Obispo County. See our coverage of the broader <a href="/locations/paso-robles/">Paso Robles</a> market, and how aerial content fits into county-wide tourism marketing in <a href="/blog/slo-county-tourism-aerial-footage-destination-marketing/">SLO County tourism and aerial footage</a>.</p>
+
+<h2>Working With a Local Wine Country Videographer</h2>
+<p>805 Aerial has produced aerial video for wineries across the Paso Robles region, combining <a href="/services/aerial-drone-video-production/">aerial drone video</a> with <a href="/services/commercial-video-production/">full commercial video production</a> for brand and marketing needs. We also cover <a href="/services/event-and-wedding-aerial-video/">wedding and event aerial video</a> for wineries hosting private events.</p>
+
+<div class="disclaimer-bar">This article is for general informational purposes only and does not constitute legal or marketing advice specific to any individual property or business.</div>
+
+<p>For more on the region, see the <a href="https://pasowine.com/" target="_blank" rel="noopener">Paso Robles Wine Country Alliance</a> and <a href="https://www.visitslo.com/" target="_blank" rel="noopener">Visit SLO CAL</a>.</p>
+
+</div></section>
+""" + article_schema(slug, title, desc, date)
+
+write(f"blog/{slug}/index.html", shell(f"{title} | 805 Aerial Blog", desc, f"{BASE}/blog/{slug}/", "", body))
+print("article 3 done")

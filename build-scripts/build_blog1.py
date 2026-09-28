@@ -1,0 +1,94 @@
+from gen_pages import shell, write
+BASE = "https://805aerial.com"
+
+def article_schema(slug, title, desc, date):
+    return f"""<script type="application/ld+json">
+{{"@context":"https://schema.org","@type":"Article","headline":"{title}","description":"{desc}","datePublished":"{date}","dateModified":"{date}","author":{{"@type":"Organization","name":"805 Aerial"}},"publisher":{{"@type":"Organization","name":"805 Aerial"}}}}
+</script>
+<script type="application/ld+json">
+{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{{"@type":"ListItem","position":1,"name":"Home","item":"{BASE}/"}},
+{{"@type":"ListItem","position":2,"name":"Blog","item":"{BASE}/blog/"}},
+{{"@type":"ListItem","position":3,"name":"{title}","item":"{BASE}/blog/{slug}/"}}
+]}}
+</script>"""
+
+slug = "filming-drone-permits-san-luis-obispo-county"
+title = "A Guide to Filming and Drone Permits in San Luis Obispo County"
+desc = "What FAA, state, and local rules apply before flying a drone or filming a production in San Luis Obispo County, California."
+date = "2026-09-27"
+
+body = f"""
+<section class="page-hero" style="background:#0b1220">
+  <div style="position:absolute;inset:0;z-index:0">
+    <img src="/images/portfolio/8-aerial-drone-photos-taiwan.jpg" alt="" role="presentation" style="width:100%;height:100%;object-fit:cover;object-position:center">
+    <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(11,18,32,.93) 55%,rgba(11,18,32,.65) 100%)"></div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:2;max-width:800px">
+    <div class="breadcrumbs" style="color:#c7ccd6"><a href="/">Home</a> / <a href="/blog/">Blog</a> / Drone Permits Guide</div>
+    <h1>{title}</h1>
+    <p class="lede">A practical breakdown of FAA, state, and local rules that apply before flying a drone or running a film production anywhere in San Luis Obispo County.</p>
+  </div>
+</section>
+
+<section class="block"><div class="wrap article-body">
+<p class="article-meta">Published September 2026 &middot; 805 Aerial &middot; 9 min read</p>
+
+<p>Anyone planning to fly a drone or run a film shoot in San Luis Obispo County runs into the same question eventually: what am I actually allowed to do here, and who do I need to ask first? The honest answer is that it depends on where you're flying, whether you're being paid for the work, and what kind of land sits underneath the flight path. This guide breaks down the rules that actually apply on the Central Coast, not the generic drone-law explainer you'll find written for a national audience with no reference to this specific county.</p>
+
+<div class="callout"><strong>This article is general information, not legal advice.</strong> Airspace rules change, and specific venues, parks, and jurisdictions can add their own restrictions on top of federal law. Confirm current rules with the FAA and the relevant local authority before flying.</div>
+
+<h2>Start With the FAA: Part 107 vs. Recreational Flying</h2>
+<p>The foundational rule for any drone flight in the United States, including San Luis Obispo County, comes from the Federal Aviation Administration. If you are flying for any kind of compensation, including a real estate listing, a wedding video you're paid to shoot, or content for a business's marketing, you are legally required to hold a Part 107 Remote Pilot Certificate. Flying without one while doing paid work is not a minor technicality; it's an FAA violation that can carry real penalties, and it also typically voids any commercial insurance coverage a client might assume is in place.</p>
+<p>Recreational flyers, people flying purely for personal enjoyment with no compensation involved, operate under a different, lighter set of rules (the FAA's recreational flyer exception), but even then must pass TRUST, the FAA's free recreational drone safety test, and follow the same basic airspace restrictions as commercial operators.</p>
+<p>Either way, every operator needs to check current airspace authorization before flying near controlled airspace. Two airports in San Luis Obispo County matter most here: <strong>San Luis Obispo County Regional Airport</strong> and <strong>Paso Robles Municipal Airport</strong>. Both sit inside controlled airspace, which means flights nearby typically require an authorization through the FAA's LAANC system before takeoff, not just a polite assumption that a drone flying "low enough" is fine.</p>
+
+<h2>State and County Layers on Top of Federal Rules</h2>
+<p>California doesn't have a single statewide drone permit system the way some states do, but state and local land managers add their own restrictions on top of FAA rules, and this is where most confusion actually happens locally.</p>
+<ul>
+  <li><strong>State parks and beaches.</strong> California State Parks generally prohibits launching, landing, or operating drones within state park boundaries without a specific permit. San Luis Obispo County includes several state park units along the coast, and a drone flight that would be perfectly legal over open private land can require a separate state parks permit if it launches from or flies over park property.</li>
+  <li><strong>County and city land.</strong> The <a href="https://www.slocounty.ca.gov/" target="_blank" rel="noopener">County of San Luis Obispo</a> and individual cities within it can restrict drone use over specific county or municipal facilities, parks, and events. This is less about a blanket county-wide drone ban and more about specific sites, a county park, a fairgrounds event, a public beach access point, having their own posted rules.</li>
+  <li><strong>Wildlife and habitat protections.</strong> Areas like the Morro Bay estuary and portions of the coastline around Montaña de Oro and the dunes near Pismo Beach include sensitive habitat for shorebirds and other protected species. Low-altitude drone flights near nesting or roosting areas can be restricted, sometimes seasonally, to avoid disturbing wildlife.</li>
+</ul>
+
+<h2>Film Production Permits: A Different Process Than a Drone Flight</h2>
+<p>If a project involves more than a drone, ground crew, equipment, extras, closing off a public space, San Luis Obispo County and its individual cities generally require a separate film permit process, distinct from FAA drone authorization. This typically involves an application to the relevant city or county film office (often housed within economic development, the city manager's office, or a county film liaison), proof of insurance, and coordination if the shoot affects traffic, parking, or public access.</p>
+<div class="scenario-box">
+<strong>Illustrative scenario:</strong> a production company wants to film a short commercial that includes both aerial drone shots of downtown San Luis Obispo and a ground crew blocking part of a sidewalk for an hour. The drone portion needs FAA Part 107 compliance and airspace authorization near the city. The ground portion, blocking public sidewalk access, likely needs a separate city film or special event permit, entirely apart from the drone paperwork. Treating these as one combined permit is a common and avoidable mistake.
+</div>
+
+<h2>Private Property vs. Public Land</h2>
+<p>Flying over your own property, or a client's property with their permission, is generally the simplest case: FAA rules still apply (airspace, altitude limits, no flying over people without a waiver), but you don't need a separate land-use permit just to fly over private land you have permission to be on. The complexity increases as soon as the flight path crosses public land, a public beach, a county park, a road, even briefly. That's when the county and state layers described above start to matter.</p>
+
+<h2>A Practical Checklist Before Any Flight or Shoot</h2>
+<table class="compare">
+<tr><th>Question</th><th>Why It Matters</th></tr>
+<tr><td>Is this flight for compensation?</td><td>Determines whether Part 107 certification is legally required</td></tr>
+<tr><td>Is the location near San Luis Obispo County Regional Airport or Paso Robles Municipal Airport?</td><td>May require LAANC airspace authorization</td></tr>
+<tr><td>Does the flight path cross a state park, beach, or protected habitat area?</td><td>May require a separate state parks permit or trigger a wildlife restriction</td></tr>
+<tr><td>Will the shoot involve ground crew, road closures, or public space?</td><td>Likely requires a separate city or county film permit</td></tr>
+<tr><td>Is the property privately owned with clear owner permission?</td><td>Simplifies the process significantly compared to public land</td></tr>
+</table>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<details><summary>Do I need a permit just to fly a drone over my own backyard?</summary><p>Generally no separate land-use permit is needed for flying over your own private property, though FAA rules on altitude, airspace, and not flying over people still apply.</p></details>
+<details><summary>Can I fly a drone at Pismo Beach or Morro Bay without any special permission?</summary><p>It depends on the exact location. Some beach and coastal areas have wildlife or state park restrictions that require checking before flying, rather than assuming any beach is open airspace.</p></details>
+<details><summary>What happens if I fly commercially without a Part 107 certificate?</summary><p>You're operating outside FAA rules, which can carry civil penalties, and it also typically means any client relying on your work has no real insurance protection behind it.</p></details>
+<details><summary>Who handles film permits for the city of San Luis Obispo?</summary><p>Film and special event permitting is generally coordinated through the relevant city or county office responsible for economic development or special events; contact information is available through each city's official website.</p></details>
+</div>
+
+<h2>Working With a Licensed Local Operator</h2>
+<p>805 Aerial operates under an FAA Part 107 remote pilot certificate and checks airspace and land-use restrictions before every flight in San Luis Obispo County, whether that's a <a href="/services/real-estate-aerial-photography/">real estate shoot</a> in Arroyo Grande or a <a href="/services/event-and-wedding-aerial-video/">wedding</a> at a Paso Robles vineyard. If you're planning a project and aren't sure what applies, that's a normal first question to ask before booking, not after.</p>
+
+<div class="disclaimer-bar">This article is for general informational purposes only and does not constitute legal advice. Consult the FAA, California State Parks, or the relevant city or county office before undertaking any drone flight or film production in San Luis Obispo County.</div>
+
+<p>Further reading: the <a href="https://www.faa.gov/uas" target="_blank" rel="noopener">FAA's official UAS regulations page</a>, <a href="https://www.parks.ca.gov/" target="_blank" rel="noopener">California State Parks</a>, and the <a href="https://www.slocounty.ca.gov/" target="_blank" rel="noopener">County of San Luis Obispo</a> official site.</p>
+
+<p>See also: <a href="/services/aerial-drone-video-production/">aerial drone video production</a>, and our related article on <a href="/blog/slo-county-tourism-aerial-footage-destination-marketing/">how aerial footage shapes Central Coast tourism marketing</a>.</p>
+
+</div></section>
+""" + article_schema(slug, title, desc, date)
+
+write(f"blog/{slug}/index.html", shell(f"{title} | 805 Aerial Blog", desc, f"{BASE}/blog/{slug}/", "", body))
+print("article 1 done")

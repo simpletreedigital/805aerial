@@ -1,0 +1,90 @@
+from gen_pages import shell, write
+BASE = "https://805aerial.com"
+
+def article_schema(slug, title, desc, date):
+    return f"""<script type="application/ld+json">
+{{"@context":"https://schema.org","@type":"Article","headline":"{title}","description":"{desc}","datePublished":"{date}","dateModified":"{date}","author":{{"@type":"Organization","name":"805 Aerial"}},"publisher":{{"@type":"Organization","name":"805 Aerial"}}}}
+</script>
+<script type="application/ld+json">
+{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{{"@type":"ListItem","position":1,"name":"Home","item":"{BASE}/"}},
+{{"@type":"ListItem","position":2,"name":"Blog","item":"{BASE}/blog/"}},
+{{"@type":"ListItem","position":3,"name":"{title}","item":"{BASE}/blog/{slug}/"}}
+]}}
+</script>"""
+
+slug = "real-estate-photography-trends-central-coast"
+title = "Real Estate Photography Trends for the Central Coast Market"
+desc = "What's changed in real estate listing photography and why aerial imagery has become standard for higher-end San Luis Obispo County properties."
+date = "2026-09-27"
+
+body = f"""
+<section class="page-hero" style="background:#0b1220">
+  <div style="position:absolute;inset:0;z-index:0">
+    <img src="/images/portfolio/15-aerial-drone-ag-home.jpg" alt="" role="presentation" style="width:100%;height:100%;object-fit:cover;object-position:center">
+    <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(11,18,32,.93) 55%,rgba(11,18,32,.65) 100%)"></div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:2;max-width:800px">
+    <div class="breadcrumbs" style="color:#c7ccd6"><a href="/">Home</a> / <a href="/blog/">Blog</a> / RE Photography Trends</div>
+    <h1>{title}</h1>
+    <p class="lede">What's changed in listing photography on the Central Coast, and why aerial imagery has moved from a novelty to an expectation.</p>
+  </div>
+</section>
+
+<section class="block"><div class="wrap article-body">
+<p class="article-meta">Published September 2026 &middot; 805 Aerial &middot; 10 min read</p>
+
+<p>Ten years ago, a standard real estate listing in San Luis Obispo County meant a dozen or so interior photos, a shot of the front yard, and maybe a wide-angle exterior if the photographer had a good lens. That's no longer enough for a property to compete, particularly in a market where buyers relocating from the Bay Area or Los Angeles are comparing dozens of listings online before ever scheduling a showing. The shift toward aerial photography and video reflects a broader change in what buyers expect to see before they commit to a drive up the coast.</p>
+
+<h2>Why Ground Photos Alone Undersell Central Coast Properties</h2>
+<p>San Luis Obispo County's geography works against flat, ground-level photography in a way that's less true in a typical suburban tract market. Hillside lots in Atascadero and Paso Robles have views and topography that a ground shot simply can't capture. Agricultural and vineyard parcels need an overview to show scale. Coastal properties near Pismo Beach and Cambria are often valued specifically for proximity to the water, something that's hard to communicate convincingly without an aerial establishing shot showing the actual distance and sightline.</p>
+<p>An aerial photo answers the question buyers are actually asking when they look at a listing from out of the area: what is this property's setting actually like, not just what does the kitchen look like.</p>
+
+<h2>The Shift From Novelty to Expectation</h2>
+<p>Aerial real estate photography used to be reserved for luxury listings, a differentiator agents used sparingly because of cost and complexity. That's changed for a few concrete reasons:</p>
+<ul>
+  <li><strong>Drone technology got cheaper and better.</strong> Stabilized cinema-quality drones with high-resolution cameras are now standard production tools rather than expensive specialty equipment, which lowered the cost of professional aerial photography significantly.</li>
+  <li><strong>MLS platforms and buyer behavior evolved.</strong> Most buyers now do the majority of their property research online before ever contacting an agent, which means listing photos carry more of the persuasion burden than they used to.</li>
+  <li><strong>Video and vertical formats became normal marketing channels.</strong> Agents increasingly need content that works as a listing photo, a full video walkthrough, and a short vertical clip for Instagram or TikTok, from the same shoot.</li>
+</ul>
+
+<h2>What's Actually Changed in Practice</h2>
+<table class="compare">
+<tr><th>Then</th><th>Now</th></tr>
+<tr><td>A handful of static interior/exterior photos</td><td>A mixed set: interior, exterior, aerial stills, and often a short video</td></tr>
+<tr><td>Aerial photography reserved for luxury listings</td><td>Aerial coverage increasingly standard for mid-market and agricultural listings, not just luxury</td></tr>
+<tr><td>One horizontal format for MLS only</td><td>Multiple formats: MLS-ready stills, vertical social cuts, full video walkthroughs</td></tr>
+<tr><td>Photos shot mid-day for convenience</td><td>Golden hour and twilight photography increasingly requested for higher-end listings</td></tr>
+</table>
+
+<h2>Where Aerial Photography Matters Most on the Central Coast</h2>
+<div class="scenario-box">
+<strong>Illustrative example:</strong> a hillside property in Atascadero has a modest street-facing facade but sits on nearly two acres with sweeping views toward the Santa Lucia range. A ground photo shows a nice house. An aerial photo shows the actual value proposition, a large private lot with a view most buyers wouldn't otherwise understand from photos alone. This is the specific case where aerial photography changes buyer perception rather than just adding a nice extra image.
+</div>
+<p>The same logic applies to agricultural and vineyard properties around Paso Robles, where a parcel's shape, usable acreage, and relationship to surrounding vineyards matters more to a serious buyer than any single interior photo could convey.</p>
+
+<h2>What This Means for Agents and Sellers</h2>
+<p>Listings that include aerial photography or video, especially for properties where setting and lot size are part of the value story, tend to generate stronger engagement and more serious inquiries from buyers who already understand what they're looking at before a showing. That doesn't mean every listing needs a full aerial production package. A standard suburban home in a dense neighborhood may not benefit as much as a hillside, waterfront, or agricultural property where the setting itself is part of the sale.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<details><summary>Does every listing need aerial photography now?</summary><p>Not necessarily. Aerial photography adds the most value for properties where lot size, view, or setting is a selling point, hillside, waterfront, or agricultural parcels in particular.</p></details>
+<details><summary>How quickly can aerial photos be delivered before a listing goes live?</summary><p>Most professional aerial photography services, including <a href="/services/real-estate-aerial-photography/">805 Aerial's</a>, deliver within 24 to 48 hours of the shoot.</p></details>
+<details><summary>Is twilight aerial photography worth the extra cost?</summary><p>For higher-end or view-oriented listings, twilight photography often produces a noticeably more compelling image than a standard daytime shot, and many agents consider it worth the investment for that tier of listing.</p></details>
+<details><summary>Can aerial photos be used in print marketing, not just online?</summary><p>Yes, professional aerial photography is typically delivered at high enough resolution for large-format print flyers and brochures, not just web use.</p></details>
+</div>
+
+<h2>Working With a Local Aerial Photographer</h2>
+<p>805 Aerial has produced <a href="/services/real-estate-aerial-photography/">real estate aerial photography</a> for agents from Century 21, RE/MAX, Haven Properties, and Pacifica Commercial Realty across San Luis Obispo County. For listings where video adds value alongside stills, see <a href="/services/aerial-drone-video-production/">aerial drone video production</a>. We shoot regularly in <a href="/locations/paso-robles/">Paso Robles</a>, <a href="/locations/atascadero/">Atascadero</a>, and <a href="/locations/arroyo-grande/">Arroyo Grande</a>.</p>
+
+<div class="disclaimer-bar">This article is for general informational purposes only and does not constitute real estate or marketing advice. Consult a licensed real estate professional for guidance specific to your property or transaction.</div>
+
+<p>For broader context on the Central Coast real estate market, see the <a href="https://www.car.org/" target="_blank" rel="noopener">California Association of Realtors</a> and <a href="https://www.visitslo.com/" target="_blank" rel="noopener">Visit SLO CAL</a>.</p>
+
+<p>See also: <a href="/blog/paso-robles-wineries-aerial-video-marketing/">how Paso Robles wineries use aerial video for marketing</a>.</p>
+
+</div></section>
+""" + article_schema(slug, title, desc, date)
+
+write(f"blog/{slug}/index.html", shell(f"{title} | 805 Aerial Blog", desc, f"{BASE}/blog/{slug}/", "", body))
+print("article 2 done")
